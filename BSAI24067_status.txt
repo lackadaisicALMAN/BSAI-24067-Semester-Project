@@ -1,0 +1,26 @@
+Project: AgriYield - Rice Production Storage and Analysis Platform
+Student: Salman Ejaz
+Date: Dec 8, 2025
+
+To Run: Application present in the folder. Command is ./agri_yield
+
+CURRENT STATUS:
+1. Core B-Tree Implementation: COMPLETED
+   - Implemented BTreeNode structure with generic keys.
+   - Implemented Insertion algorithm (Node splitting, root handling).
+   - Implemented Traversal (In-order sorted display).
+   - Implemented Search (O(log n) retrieval).
+
+2. Data Modeling: COMPLETED
+   - Created RiceBatch structure to hold industrial parameters (Moisture, Weight, Farmer ID).
+
+3. Interface: PARTIAL
+   - CLI (Command Line Interface) working for data entry and retrieval.
+
+REMAINING TASKS (minimum):
+1. Persistence: Implement File I/O to save B-Tree data to disk (handling .dat files).
+2. Supplier Indexing: Implement Hash Table for O(1) Farmer lookup.
+3. Optimization: Implement Min-Heap for "Drying Priority" queue.
+4. Connectivity: Expose local server for Mobile App integration.
+
+Note: Note features to be added after minimum remaining tasks- features to allow most of facility's management on database.
