@@ -20,7 +20,7 @@ struct RiceBatch {
         : batchID(id), farmerName(name), weight(w), moistureLevel(m), arrivalDate(date) {}
 
     // Utility to display batch info
-    void printBatch() {
+    void printBatch() const {
         cout << "[ID: " << batchID << "] | Farmer: " << farmerName 
              << " | Weight: " << weight << "kg | Moisture: " << moistureLevel << "%" << endl;
     }

@@ -36,6 +36,30 @@ public:
     bool isEmpty() const { return heap.empty(); }
     std::size_t size() const { return heap.size(); }
 
+    // Linear scan to find the batch with highest moisture (wettest, needs drying most)
+    const RiceBatch* findHighestMoistureBatch() const {
+        if (heap.empty()) return nullptr;
+        std::size_t maxIdx = 0;
+        for (std::size_t i = 1; i < heap.size(); ++i) {
+            if (heap[i].moistureLevel > heap[maxIdx].moistureLevel) {
+                maxIdx = i;
+            }
+        }
+        return &heap[maxIdx];
+    }
+
+    // Linear scan to find the batch with lowest moisture (driest, ready for processing)
+    const RiceBatch* findLowestMoistureBatch() const {
+        if (heap.empty()) return nullptr;
+        std::size_t minIdx = 0;
+        for (std::size_t i = 1; i < heap.size(); ++i) {
+            if (heap[i].moistureLevel < heap[minIdx].moistureLevel) {
+                minIdx = i;
+            }
+        }
+        return &heap[minIdx];
+    }
+
 private:
     std::vector<RiceBatch> heap;
 
@@ -74,5 +98,4 @@ private:
         }
     }
 };
-
 #endif
